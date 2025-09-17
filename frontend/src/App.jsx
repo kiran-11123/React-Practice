@@ -6,12 +6,26 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+  function increase(){
+       setCount(count+1);
+  }
+
+  function decrease(){
+       
+    if(count>1){
+        setCount(count-1);
+    }
+  }
+
   return (
     <div> 
 
+      <p>Count:{count}</p>
 
-     <button onClick={(e)=>setCount(count+1)}>Hello :{count}</button>
-        
+
+     <button onClick={increase}>Increase  </button>
+      <button onClick={decrease}>Decrease  </button>
+
     </div>
   )
 }
