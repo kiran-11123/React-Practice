@@ -4,27 +4,29 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [todo, setTodo] = useState([])
 
-  function increase(){
-       setCount(count+1);
-  }
 
-  function decrease(){
-       
-    if(count>1){
-        setCount(count-1);
-    }
+
+  function AddTodo(){
+         
+       let newArray = [...todo];
+
+       newArray.push({
+            title:"Eat food",
+            Description:"Need to eat good food",
+            done:true
+       })
+
+       setTodo(newArray);
   }
 
   return (
     <div> 
 
-      <p>Count:{count}</p>
+       <button onClick={AddTodo}>Add Todo</button>
 
-
-     <button onClick={increase}>Increase  </button>
-      <button onClick={decrease}>Decrease  </button>
+       {JSON.stringify(todo)}
 
     </div>
   )
