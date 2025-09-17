@@ -1,35 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState ,useEffect} from 'react'
 import './App.css'
 
 function App() {
-  const [todo, setTodo] = useState([])
+
+    return(
+     <div>
+      
+      
+      <Counter/>
+
+     
 
 
 
-  function AddTodo(){
-         
-       let newArray = [...todo];
 
-       newArray.push({
-            title:"Eat food",
-            Description:"Need to eat good food",
-            done:true
-       })
+     </div>
 
-       setTodo(newArray);
+    )
   }
 
-  return (
-    <div> 
 
-       <button onClick={AddTodo}>Add Todo</button>
+  
+  function Counter(){
 
-       {JSON.stringify(todo)}
 
-    </div>
-  )
-}
+      const[count,setCount] = useState(0);
+   
+    useEffect(()=>{
+
+
+      setInterval(()=>{
+      setCount(10000);
+    
+    },1000)
+
+    console.log('mounted')
+
+    },[])
+    
+    console.log('count');
+
+  return  <p>Count :{count}</p>
+
+  }
+
+
+ 
 
 export default App
