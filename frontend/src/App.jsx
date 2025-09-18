@@ -3,23 +3,26 @@ import './App.css'
 
 function App() {
 
-  const [visible , setVisible] = useState(false);
+  const[count , setCount] = useState(0);
 
-  function toggle(){
-       setVisible(!visible);
+  function increaseValue(){
+          
+    setCount((curval)=>curval+1) 
   }
 
 
+  useEffect(()=>{
 
-    return(
-     <div >
+    setInterval(increaseValue , 1000);
 
-       <button onClick={toggle}>Click me</button>
+  },[])
 
-       {visible && <div> This is visible </div>}
-     </div>
+       return(
 
-    )
+           <div>
+                {count}
+           </div>
+       )
   }
 
   
