@@ -1,74 +1,39 @@
 import { useState ,useEffect, createContext ,useContext} from 'react'
 const BulbContext = createContext();
 
+
+//custom hook
+
+function useCounter(){
+
+  const [count, setCount] = useState(0);
+
+  function increaseCount(){
+      setCount(count+1);
+  }
+
+  return {
+       count:count,
+       increaseCount : increaseCount
+  }
+   
+}
+
 function App() {
 
-  const [bulbOn,setBulbOn] = useState(true);
+
+  const {count ,increaseCount} = useCounter();
 
 
   return(
 
     <div>
-
-       <BulbContext.Provider value={{
-        bulbOn:bulbOn ,
-        setBulbOn:setBulbOn
-      }}>
-           <Light/>
-      </BulbContext.Provider>
+      <button onClick={increaseCount}>Increase {count}</button>
     </div>
   )
 
   
        
-  }
-
-  function Light(){
-
-   
-        
-    return(
-         <div>
-
-          <LightBulb />
-          <LightSwitch />
-          
-
-
-         </div>
-    )
-  }
-
-  function LightBulb(){
-    
-
-    const {bulbOn} = useContext(BulbContext);
-    
-        
-    return(
-         <div>
-
-          {bulbOn ?"Bulb On" : "Bulb off"}
-
-         </div>
-    )
-  }
-
-  function LightSwitch(){
-
-    const {bulbOn , setBulbOn}  = useContext(BulbContext);
-
-    function toggle(){
-         
-      setBulbOn(!bulbOn)
-    }
-        
-    return(
-
-         <div>
-             <button onClick={toggle}> Toggle the bulb</button>
-         </div>
-    )
   }
 
   
