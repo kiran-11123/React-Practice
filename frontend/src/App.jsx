@@ -1,4 +1,4 @@
-import { useState ,useEffect} from 'react'
+import { useState ,useEffect, useRef} from 'react'
 import './App.css'
 import { BrowserRouter , Routes , Route ,Link  , useNavigate} from 'react-router-dom'
 import Nav from './components/Nav'
@@ -8,32 +8,32 @@ import Error from './components/Error'
 import Layout from './components/Layout'
 function App() {
 
+  const inputRef = useRef();
+  const inputRef2 = useRef();
+
+  function focusOnInput(){
+       document.getElementById("name");
+       inputRef.current.focus();
+       inputRef2.current.focus();
+  }
+
       
      
   return(
 
     <div>
 
+      Signup
+
+      <input  ref={inputRef} type={"text"}></input>
+
+       <input ref={inputRef2} type={"text"}></input>
+
+       <button onClick={focusOnInput}>Submit</button>
+
+
    
-        <BrowserRouter>
-
-
-      <Routes>
-
-        <Route path="/" element={<Layout />} >
-
-         <Route path="/" element={<Nav/>} />
-         <Route path="/home" element={<Home/>} />
-        <Route path="/projects" element={<Projects/>} />
-        <Route path="*" element={<Error/>} />
-
-        </Route>
-
-      </Routes>
-
-      </BrowserRouter>
-
-
+         
 
       </div>
   )
