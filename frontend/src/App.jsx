@@ -1,10 +1,11 @@
 import { useState ,useEffect} from 'react'
 import './App.css'
-import { BrowserRouter , Routes , Route ,Link } from 'react-router-dom'
+import { BrowserRouter , Routes , Route ,Link  , useNavigate} from 'react-router-dom'
 import Nav from './components/Nav'
 import Home from './components/Home'
 import Projects from './components/Projects'
 function App() {
+
       
      
   return(
