@@ -8,30 +8,43 @@ import Error from './components/Error'
 import Layout from './components/Layout'
 function App() {
 
-  const inputRef = useRef();
-  const inputRef2 = useRef();
+  // aclock with start and stop button
 
-  function focusOnInput(){
-       document.getElementById("name");
-       inputRef.current.focus();
-       inputRef2.current.focus();
+  const[currentCount ,setCurrentCount] = useState(1);
+  const timer = useRef();
+
+  function startclock(){
+        
+     let value = setInterval(()=>{
+        setCurrentCount(c=>c+1);
+
+    },1000)
+
+    timer.current = value;
   }
 
-      
+  function stopclock(){
+    console.log("hi")
+     
+    clearInterval(timer.current);
+   
+  }
      
   return(
 
     <div>
 
-      Signup
 
-      <input  ref={inputRef} type={"text"}></input>
+      {currentCount}
+      <br />
 
-       <input ref={inputRef2} type={"text"}></input>
+      <button onClick={startclock}>Start</button>
 
-       <button onClick={focusOnInput}>Submit</button>
+        <button onClick={stopclock}>Stop</button>
 
+      
 
+          
    
          
 
