@@ -10,7 +10,7 @@ function App() {
 
     <div>
 
-      <BulbContext.Provider value={{
+       <BulbContext.Provider value={{
         bulbOn:bulbOn ,
         setBulbOn:setBulbOn
       }}>
@@ -42,7 +42,7 @@ function App() {
   function LightBulb(){
     
 
-    const bulbOn = useContext(BulbContext);
+    const {bulbOn} = useContext(BulbContext);
     
         
     return(
