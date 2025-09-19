@@ -1,58 +1,60 @@
 import { useState ,useEffect, useRef} from 'react'
-import './App.css'
-import { BrowserRouter , Routes , Route ,Link  , useNavigate} from 'react-router-dom'
-import Nav from './components/Nav'
-import Home from './components/Home'
-import Projects from './components/Projects'
-import Error from './components/Error'
-import Layout from './components/Layout'
 function App() {
 
-  // aclock with start and stop button
 
-  const[currentCount ,setCurrentCount] = useState(1);
-  const timer = useRef();
-
-  function startclock(){
-        
-     let value = setInterval(()=>{
-        setCurrentCount(c=>c+1);
-
-    },1000)
-
-    timer.current = value;
-  }
-
-  function stopclock(){
-    console.log("hi")
-     
-    clearInterval(timer.current);
-   
-  }
-     
   return(
 
     <div>
-
-
-      {currentCount}
-      <br />
-
-      <button onClick={startclock}>Start</button>
-
-        <button onClick={stopclock}>Stop</button>
-
-      
-
-          
-   
-         
-
-      </div>
+      <LightBulb />
+    </div>
   )
 
   
        
+  }
+
+  function LightBulb(){
+
+    const[bulbOn , setbulbOn] =useState(true);
+        
+    return(
+         <div>
+
+          <BulbState bulbOn={bulbOn} />
+          <ToggleBulbState setbulbOn={setbulbOn} bulbOn={bulbOn} />
+          
+
+
+         </div>
+    )
+  }
+
+  function BulbState({bulbOn}){
+
+    
+        
+    return(
+         <div>
+
+          {bulbOn ?"Bulb On" : "Bulb off"}
+
+         </div>
+    )
+  }
+
+  function ToggleBulbState({setbulbOn,bulbOn}){
+
+    function toggle(){
+         
+      setbulbOn(!bulbOn)
+    }
+        
+    return(
+
+         <div>
+             <button onClick={toggle}> Toggle the bulb</button>
+         </div>
+    )
   }
 
   
