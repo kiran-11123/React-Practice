@@ -1,39 +1,76 @@
 import { useState ,useEffect, createContext ,useContext} from 'react'
-const BulbContext = createContext();
 
 
-//custom hook
 
-function useCounter(){
-
-  const [count, setCount] = useState(0);
-
-  function increaseCount(){
-      setCount(count+1);
-  }
-
-  return {
-       count:count,
-       increaseCount : increaseCount
-  }
-   
-}
 
 function App() {
 
 
-  const {count ,increaseCount} = useCounter();
 
+
+  
 
   return(
 
     <div>
-      <button onClick={increaseCount}>Increase {count}</button>
+
+      <Counter />
+        
     </div>
   )
 
   
        
+  }
+
+  
+
+  function Counter(){
+
+      const[count,setCount] = useState(0);
+       
+    return(
+      <div >
+
+            <CurrentCount count={count} />
+           <Increase  setCount={setCount}/>
+           <Decrease setCount={setCount} />
+      </div>
+    )
+  }
+
+  function CurrentCount({count}){
+       
+    return(
+      <div>
+        {count}
+      </div>
+    )
+  }
+
+
+  function Increase({setCount}){
+
+    function increase(){
+        setCount(c=>c+1)
+    }
+      return (
+        <div>
+            <button onClick={increase}>Increase</button>
+        </div>
+      )
+  }
+
+    function Decrease({setCount}){
+
+      function decrease(){
+         setCount(c=>c-1);
+      }
+      return (
+        <div>
+            <button onClick={decrease}>Decrease</button>
+        </div>
+      )
   }
 
   
