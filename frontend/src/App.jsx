@@ -1,5 +1,6 @@
 import './App.css'
 import './index.css'
+import Otp from './components/Otp'
 
 function App() {
 
@@ -11,9 +12,14 @@ function App() {
 
   return(
 
-    <div className="bg-red-500 text-white text-center">
+    <div className='h-screen bg-blue-700'>
 
-         hi there
+        <Otp />
+         
+
+
+
+     
         
     </div>
   )
