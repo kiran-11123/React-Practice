@@ -1,34 +1,21 @@
 import './App.css'
 import './index.css'
-import Otp from './components/Otp'
+import SidebarClass1 from './answers/1.basic-project'
+
 
 function App() {
-
-      
-
-
-
-  
-
   return(
+   
+    <div>
 
-    <div className='h-screen bg-blue-700'>
-
-        <Otp />
-         
-
+       <SidebarClass1 />
 
 
-     
-        
+
     </div>
-  )
-
-  
-       
-  }
+   
+  )}
 
 
-  
 
 export default App
