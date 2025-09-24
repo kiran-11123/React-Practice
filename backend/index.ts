@@ -1,8 +1,3 @@
-function delayedCall(fn:()=>void){
-     setTimeout(fn ,1000);
+let greet = ()=>{
+    console.log("Hello World");
 }
-
-
-delayedCall(function(){
-    console.log("hello")
-})
