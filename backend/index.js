@@ -1,5 +1,11 @@
 "use strict";
-function greet(firstName) {
-    console.log("hello " + firstName);
+function greet(age) {
+    if (age > 18) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
-greet("kiran");
+let ans = greet(10);
+console.log(ans);

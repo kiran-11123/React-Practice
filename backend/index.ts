@@ -1,7 +1,8 @@
-function greet(firstName:String){
-    console.log("hello " + firstName)
-
-
+function delayedCall(fn:()=>void){
+     setTimeout(fn ,1000);
 }
 
-greet("kiran");
+
+delayedCall(function(){
+    console.log("hello")
+})
