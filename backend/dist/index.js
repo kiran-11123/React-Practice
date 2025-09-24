@@ -1,8 +1,12 @@
 "use strict";
-function sum(a, b) {
-    const A = typeof (a) === 'string' ? parseFloat(a) : a;
-    const B = typeof (b) === 'string' ? parseFloat(b) : b;
-    return A + B;
-}
-let res = sum(10, 20);
-console.log(res);
+const greet = (data) => {
+    console.log("The Employee name is " + data.name);
+    console.log("The Age of the Employee is " + data.age);
+    console.log("The Department is " + data.department);
+};
+const details = {
+    name: "Kiran",
+    age: 25,
+    department: "SCB"
+};
+greet(details);

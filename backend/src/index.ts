@@ -1,12 +1,29 @@
-type sumInput = string | number;
+interface basic{
 
-function sum(a:sumInput , b:sumInput){
-      
-    const A = typeof(a)==='string' ? parseFloat(a):a;
-    const B = typeof(b)==='string' ? parseFloat(b):b;
-
-    return A+B;
+    name:string;
+    age:number
 }
 
-let res:number = sum(10,20);
-console.log(res);
+interface Department{
+       
+    department:string
+}
+
+type  Employee = basic & Department
+
+
+const greet = (data:Employee)=>{
+
+    console.log("The Employee name is " +data.name );
+    console.log("The Age of the Employee is "+data.age);
+    console.log("The Department is "+data.department);
+       
+}
+
+const details ={
+    name:"Kiran",
+    age:25,
+    department:"SCB"
+}
+
+greet(details)
