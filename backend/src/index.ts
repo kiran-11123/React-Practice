@@ -1,15 +1,32 @@
-//types
+//types have unions and intersections
 
 type User = {
     name:string;
     age:number;
 }
-
-function isLegal(user:User):boolean{
-       
-    return user.age>18;
+type Student ={
+    grade:string
 }
 
-const x = isLegal({name:"Kiran" , age:25}) ;
+type CollegeStudent = User & Student
+
+
+
+const user ={
+
+    name:"Kiran",
+    age:23,
+    grade:"A"
+
+}
+
+function User(user:CollegeStudent):string{
+      return `Student name is ${user.name} and Grade is ${user.grade}`
+}
+
+
+const x = User(user);
+
 console.log(x);
+
 
