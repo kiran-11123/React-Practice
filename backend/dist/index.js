@@ -1,7 +1,6 @@
 "use strict";
 const input = {
-    emp_name: 123,
-    department: "SCB",
+    emp_name: "Kiran",
     age: 24,
     address: {
         city: "bengaluru",

@@ -8,7 +8,7 @@ interface Address{
 
 interface Employee {
    emp_name:String | number;
-   department:String;
+   department?:String;
    age:number;
    address:Address
 
@@ -16,8 +16,7 @@ interface Employee {
 }
 
 const input = {
- emp_name : 123,
- department :"SCB",
+ emp_name : "Kiran",
  age:24,
  address:{
     city:"bengaluru",
