@@ -1,9 +1,10 @@
 "use strict";
-const Person = {
-    name: "Kiran",
-    age: 24,
-    greet() {
-        return `Hi ${name}`;
+// with interfaces we can define object as well as class
+class Manager {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
     }
-};
-console.log(Person);
+}
+let user = new Manager("kiran", 23);
+console.log(user.name);

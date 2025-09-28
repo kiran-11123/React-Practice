@@ -1,17 +1,26 @@
+// with interfaces we can define object as well as class
+
+// creating a class that imlements interface
+
+
 interface People{
-    name :string;
-    age:number;
-    greet:()=> string;
-
-    greet2?():string;
+     name :string,
+     age:number;
+     //greet:()=>string
 }
 
-const Person : People ={
-      name:"Kiran",
-      age:24,
-      greet(){
-         return `Hi ${name}`
+class Manager implements People{
+
+    name:string;
+    age:number
+      constructor(name:string , age:number){
+           this.name=name;
+           this.age =age;
       }
+
+
 }
 
-console.log(Person);
+let user = new Manager("kiran" ,23);
+
+console.log(user.name)
