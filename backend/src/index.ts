@@ -1,21 +1,23 @@
-// Arrays
-
 interface User{
-     firstName:string,
-     lastName:string,
-     age:number
+    id:string
+    name:string
+    age:number
+    email:string
+    password:string
 }
 
-function isLegal(user:User[]):User[]{
+type UpdateProps = Pick<User , 'name' | 'email' > //only pick these 2 
 
-    return user.filter((a)=>a.age>18)
+type UpdateProps2 = Partial<UpdateProps> // optional we can take
+
+//readonly we cannot modify it
+
+type User1={
+     readonly name:string;
+     readonly age:number;
 }
 
-const users: User[] = [
-    { firstName: "John", lastName: "Doe", age: 20 },
-    { firstName: "Jane", lastName: "Smith", age: 16 },
-    { firstName: "Bob", lastName: "Wilson", age: 25 }
-];
-console.log(isLegal(users));  // Same output as Fix 1
-console.log(isLegal([])); 
-
+const user:User1={
+    name:"Kiran",
+    age:21
+}

@@ -1,12 +1,5 @@
 "use strict";
-// Arrays
-function isLegal(user) {
-    return user.filter((a) => a.age > 18);
+function SumOfAge(user1, user2) {
+    return user1.age + user2.age;
 }
-const users = [
-    { firstName: "John", lastName: "Doe", age: 20 },
-    { firstName: "Jane", lastName: "Smith", age: 16 },
-    { firstName: "Bob", lastName: "Wilson", age: 25 }
-];
-console.log(isLegal(users)); // Same output as Fix 1
-console.log(isLegal([]));
+console.log(SumOfAge({ name: "Kiran", age: 25 }, { name: "Raj", age: 34 }));
