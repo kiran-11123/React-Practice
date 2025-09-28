@@ -8,22 +8,7 @@ interface User{
 
 function isLegal(user:User[]):User[]{
 
-    let result =[];
-       
-    for(let i=0;i<user.length;i++){
-
-        
-        if(user[i].age > 18){
-             result.push(user[i]);
-        }
-
-
-    
-
-    
-    }
-
-    return result;
+    return user.filter((a)=>a.age>18)
 }
 
 const users: User[] = [
