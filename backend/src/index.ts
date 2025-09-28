@@ -1,28 +1,36 @@
-interface Admin{
-    name:string;
-    permissions:string;
-}
+// Arrays
 
 interface User{
-    name:string;
-    age:number
+     firstName:string,
+     lastName:string,
+     age:number
 }
 
-function greet(user : Admin | User):string{
+function isLegal(user:User[]):User[]{
 
-   if('name' in user && 'permissions' in user){
-     return `Admin name is : ${user.name} and permissions is ${user.permissions}`
-   }
-   else{
-      return `User name is : ${user.name } and age is ${user.age}`
-   }
+    let result =[];
+       
+    for(let i=0;i<user.length;i++){
 
+        
+        if(user[i].age > 18){
+             result.push(user[i]);
+        }
+
+
+    
+
+    
+    }
+
+    return result;
 }
 
-const x = greet({
-    name:"Kiran",
-    age:25
-})
-
-console.log(x);
+const users: User[] = [
+    { firstName: "John", lastName: "Doe", age: 20 },
+    { firstName: "Jane", lastName: "Smith", age: 16 },
+    { firstName: "Bob", lastName: "Wilson", age: 25 }
+];
+console.log(isLegal(users));  // Same output as Fix 1
+console.log(isLegal([])); 
 
