@@ -1,18 +1,7 @@
 "use strict";
-class Manager {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-    isLegael() {
-        if (this.age > 18) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
+//types
+function isLegal(user) {
+    return user.age > 18;
 }
-const m = new Manager("kiran", 23);
-let k = m.isLegael();
-console.log(k);
+const x = isLegal({ name: "Kiran", age: 25 });
+console.log(x);
