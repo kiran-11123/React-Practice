@@ -1,10 +1,18 @@
 "use strict";
-// with interfaces we can define object as well as class
 class Manager {
     constructor(name, age) {
         this.name = name;
         this.age = age;
     }
+    isLegael() {
+        if (this.age > 18) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
-let user = new Manager("kiran", 23);
-console.log(user.name);
+const m = new Manager("kiran", 23);
+let k = m.isLegael();
+console.log(k);

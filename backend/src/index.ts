@@ -1,26 +1,31 @@
-// with interfaces we can define object as well as class
-
-// creating a class that imlements interface
-
-
-interface People{
-     name :string,
-     age:number;
-     //greet:()=>string
-}
-
-class Manager implements People{
-
+interface User{
     name:string;
-    age:number
-      constructor(name:string , age:number){
-           this.name=name;
-           this.age =age;
-      }
+    age:number;
+    isLegael():boolean;
+}
+class Manager implements User{
+      
+    name:string;
+    age:number;
 
 
+    constructor(name:string,age:number){
+        this.name=name;
+        this.age=age;
+    }
+
+    
+    isLegael(): boolean {
+        
+        if(this.age>18){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
 
-let user = new Manager("kiran" ,23);
-
-console.log(user.name)
+const m = new Manager("kiran" , 23);
+let k :boolean = m.isLegael();
+console.log(k);
