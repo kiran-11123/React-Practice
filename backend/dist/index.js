@@ -1,12 +1,11 @@
 "use strict";
-const greet = (data) => {
-    console.log("The Employee name is " + data.name);
-    console.log("The Age of the Employee is " + data.age);
-    console.log("The Department is " + data.department);
-};
-const details = {
-    name: "Kiran",
-    age: 25,
+//interfaces
+const input = {
+    emp_name: "Kiran",
     department: "SCB"
 };
-greet(details);
+function greet(name) {
+    return `Hello ${name.emp_name} , department ${name.department}`;
+}
+const result = greet(input);
+console.log(result);

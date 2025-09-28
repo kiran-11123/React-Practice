@@ -1,29 +1,22 @@
-interface basic{
+//interfaces
 
-    name:string;
-    age:number
+interface Employee {
+   emp_name:String;
+   department:String;
+
+
 }
 
-interface Department{
-       
-    department:string
+const input = {
+ emp_name : "Kiran",
+ department :"SCB"
 }
 
-type  Employee = basic & Department
 
 
-const greet = (data:Employee)=>{
-
-    console.log("The Employee name is " +data.name );
-    console.log("The Age of the Employee is "+data.age);
-    console.log("The Department is "+data.department);
-       
+function greet(name:Employee):String{
+     return `Hello ${name.emp_name} , department ${name.department}`
 }
 
-const details ={
-    name:"Kiran",
-    age:25,
-    department:"SCB"
-}
-
-greet(details)
+const result:String = greet(input);
+console.log(result);
